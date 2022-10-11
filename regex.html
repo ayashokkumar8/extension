@@ -1,0 +1,26 @@
+<html>
+<body>
+
+<p>Search for an "e" in the next paragraph:</p>
+
+<textarea id="myTextarea" name="text"> </textarea>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    text = document.getElementById("myTextarea").value; 
+    document.getElementById("demo").innerHTML = /\[[^\]]*\]/.exec(text);
+}
+
+/*var string = "pass[1][2011-08-21][total_passes]";
+var regex = /\[([^\]]*)\]/g;
+
+while (match = regex.exec(string)) {
+   alert(match[1]);
+}
+*/
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+
+  "name": "browser automation",
+  "version": "8.3.6",
+  "manifest_version": 2,
+  "description": "Extension for automating browser",
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_popup": "popup.html"
+  },
+  "icons": { "16": "css/icons/16x16.png",
+           "48": "css/icons/48x48.png",
+          "128": "css/icons/128x128.png" },
+  "background": {
+   "page": "back.html"
+  },
+  "options_page": "options_test.html",
+   "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'",
+   "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["jquery-1.7.2.min.js", "dom.js", "js/automation-api.js"],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+   "permissions": [
+    "cookies", "http://*/*", "https://*/*", "contextMenus", "tabs"
+  ]
+}
